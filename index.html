@@ -13,6 +13,9 @@
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"GT Studio","description":"Fotografia e vídeo para casamentos, eventos, gastronomia e publicidade.","telephone":"+55 43 98422-4038","email":"gabrimot83@gmail.com","founder":{"@type":"Person","name":"Gabriel Mota"},"sameAs":["https://instagram.com/gt.studios.fc","https://instagram.com/gabriel.mota43"]}</script>
+<link rel="canonical" href="https://SEU-DOMINIO.com.br/">
+<meta property="og:url" content="https://SEU-DOMINIO.com.br/">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Como funciona o orçamento?", "acceptedAnswer": {"@type": "Answer", "text": "É sem compromisso. Você preenche o formulário ou chama no WhatsApp, e eu respondo com uma proposta de acordo com o tipo de trabalho, a data e o local."}}, {"@type": "Question", "name": "Qual é o prazo de entrega?", "acceptedAnswer": {"@type": "Answer", "text": "Depende do tipo de trabalho e do volume de material. O prazo fica combinado na proposta, antes de fecharmos."}}, {"@type": "Question", "name": "Posso contratar só foto ou só vídeo?", "acceptedAnswer": {"@type": "Answer", "text": "Pode. Os serviços podem ser contratados separadamente ou juntos, como fizer mais sentido para o seu projeto."}}, {"@type": "Question", "name": "Você atende em outras cidades?", "acceptedAnswer": {"@type": "Answer", "text": "Me conte a cidade no orçamento. Dependendo da distância, o deslocamento pode entrar na proposta."}}, {"@type": "Question", "name": "Como é o pagamento?", "acceptedAnswer": {"@type": "Answer", "text": "A forma de pagamento é combinada na proposta, antes do trabalho começar."}}, {"@type": "Question", "name": "Posso ver mais trabalhos?", "acceptedAnswer": {"@type": "Answer", "text": "Claro. Chame no WhatsApp ou acompanhe o Instagram @gt.studios.fc."}}]}</script>
 <title>GT Studio — Fotografia. Vídeo. Experiências.</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
@@ -173,8 +176,49 @@ html.cu .tr{display:block}
 .nm b{display:block;font-weight:800;font-size:clamp(40px,5vw,84px);line-height:1;letter-spacing:-.04em}.nm span{font-size:14px;color:var(--mu)}
 .bio{margin:0;color:var(--mu);max-width:40em;font-size:clamp(16px,1.3vw,19px);line-height:1.5}.ph{margin:0;padding:14px 16px;border:1px dashed var(--ln);color:var(--mu);font-size:14px;max-width:40em}
 @media(max-width:700px){.wd{--fs:15vw}.gl{grid-template-columns:repeat(2,1fr)}.gl .gi{grid-column:auto!important;margin-top:0!important}.gl .gi:nth-of-type(even){margin-top:8vh!important}.fd{grid-template-columns:1fr}.fp{max-width:none}.hd nav a:not(:first-child):not(:last-child){display:none}}
+
+/* ---- profissional: processo, faq, orçamento, whatsapp ---- */
+.eb{display:block;color:var(--mu);font-size:15px;margin-bottom:10px}
+.stp{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(18px,3vw,44px)}
+.stp li{border-top:1px solid var(--fg);padding-top:18px}
+.stp b{display:block;font-weight:300;font-size:15px;color:var(--mu);font-variant-numeric:tabular-nums;margin-bottom:clamp(24px,6vh,70px)}
+.stp h3{margin:0 0 10px;font-weight:300;font-size:clamp(26px,3vw,46px);letter-spacing:-.035em;line-height:1}
+.stp p{margin:0;color:var(--mu);max-width:30ch}
+.faq details{border-top:1px solid var(--ln)}.faq details:last-child{border-bottom:1px solid var(--ln)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:clamp(18px,3vh,30px) 0;font-weight:300;font-size:clamp(20px,2.4vw,38px);letter-spacing:-.03em;line-height:1.1}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:'+';flex:none;font-size:1.3em;line-height:1;transition:transform .4s cubic-bezier(.2,.7,.2,1)}
+.faq details[open] summary:after{transform:rotate(45deg)}
+.faq details p{margin:0 0 clamp(20px,3vh,32px);max-width:46ch;color:var(--mu);font-size:clamp(16px,1.3vw,19px)}
+.qh{margin:0 0 clamp(28px,5vh,56px);max-width:30ch;color:var(--mu);font-size:clamp(16px,1.4vw,20px)}
+#qf{display:grid;gap:clamp(26px,4.5vh,44px);max-width:1000px}
+#qf fieldset{border:0;margin:0;padding:0;min-width:0}
+#qf legend,.fld>span{display:block;padding:0;color:var(--mu);font-size:14px;margin-bottom:12px}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chips label{position:relative}
+.chips input{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer}
+.chips span{display:block;padding:12px 20px;border:1px solid var(--ln);border-radius:99px;font-size:clamp(15px,1.3vw,18px);transition:background .3s,color .3s,border-color .3s}
+@media(hover:hover){.chips label:hover span{border-color:var(--fg)}}
+.chips input:checked+span{background:var(--fg);border-color:var(--fg);color:#fff}
+.chips input:focus-visible+span{outline:2px solid var(--fg);outline-offset:3px}
+.rw{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(18px,3vw,40px)}
+.fld{display:block}
+.fld input,.fld textarea{all:unset;box-sizing:border-box;display:block;width:100%;padding:8px 0 12px;border-bottom:1px solid var(--ln);font:300 clamp(20px,2vw,28px)/1.25 'Bricolage Grotesque',system-ui,sans-serif;letter-spacing:-.02em;color:var(--fg);transition:border-color .3s}
+.fld textarea{white-space:pre-wrap;min-height:3.8em}
+.fld input:focus,.fld textarea:focus{border-bottom-color:var(--fg)}
+.fld input[type=date]{min-height:1.4em}
+.ac{display:flex;flex-wrap:wrap;align-items:center;gap:18px 28px}
+.bt{border:1px solid var(--fg);background:none;color:inherit;font-family:inherit;cursor:pointer}
+.ac .al{color:var(--mu);font-size:15px;text-decoration:underline;text-underline-offset:4px;cursor:pointer}
+.er{margin:0;color:#c1121f;font-size:15px;min-height:1.4em}
+.wa{position:fixed;right:var(--pad);bottom:calc(var(--pad)*.6 + env(safe-area-inset-bottom,0px));z-index:40;width:56px;height:56px;border-radius:50%;background:var(--fg);color:#fff;display:grid;place-items:center;box-shadow:0 8px 28px rgba(0,0,0,.22);opacity:0;transform:translateY(16px) scale(.9);pointer-events:none;transition:opacity .45s,transform .45s cubic-bezier(.2,.7,.2,1)}
+.wa.show{opacity:1;transform:none;pointer-events:auto}
+.wa svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+@media(hover:hover){.wa:hover{transform:scale(1.07)}}
+@media(max-width:900px){.stp{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){.stp{grid-template-columns:1fr}.stp b{margin-bottom:18px}.rw{grid-template-columns:1fr}.wa{bottom:calc(var(--pad)*.6 + env(safe-area-inset-bottom,0px) + 62px)}}
 </style></head><body>
-<header class="hd"><b>GT STUDIO</b><nav><a href="#work">Trabalhos</a><a href="#galeria">Galeria</a><a href="#videos">Vídeos</a><a href="#servicos">Serviços</a><a href="#sobre">Sobre</a><a href="#contato">Contato</a></nav></header>
+<header class="hd"><b>GT STUDIO</b><nav><a href="#work">Trabalhos</a><a href="#galeria">Galeria</a><a href="#videos">Vídeos</a><a href="#servicos">Serviços</a><a href="#sobre">Sobre</a><a href="#orcamento">Orçamento</a></nav></header>
 <section class="hero" aria-label="GT Studio"><div class="stage">
 <div class="wi"><h2>Trabalhos</h2><p>Role para percorrer os projetos. Toque ou clique para ampliar.</p></div>
 <div class="fl"></div>
@@ -196,6 +240,7 @@ html.cu .tr{display:block}
 <li><h3>Gastronomia</h3><p>Pratos, cardápios e ambientes que despertam o apetite.</p></li>
 <li><h3>Publicidade</h3><p>Conteúdo visual para marcas e campanhas.</p></li>
 </ul></section>
+<section class="sec" id="processo"><h2>Como funciona</h2><ol class="stp"><li><b>01</b><h3>Conversa</h3><p>Você conta o que precisa, a data e o local. Respondo pelo WhatsApp e tiro suas dúvidas.</p></li><li><b>02</b><h3>Proposta</h3><p>Envio o orçamento com o que está incluso, o prazo e a forma de pagamento.</p></li><li><b>03</b><h3>Produção</h3><p>Alinhamos os detalhes e faço a cobertura com atenção ao que importa para você.</p></li><li><b>04</b><h3>Entrega</h3><p>Você recebe o material editado, dentro do prazo combinado na proposta.</p></li></ol></section>
 <section class="sec" id="sobre"><div class="ab"><p>O GT Studio é um estúdio de fotografia e vídeo. Criamos imagens para marcas, eventos e momentos que merecem ser lembrados, do prato à cerimônia.</p></div></section>
 <section class="sec fd" id="gabriel">
 <figure class="fp"><img id="gfi" alt="Gabriel Mota, fundador da GT Studio"></figure>
@@ -203,8 +248,23 @@ html.cu .tr{display:block}
 <p class="lead">Tenho 17 anos e a GT Studio é um projeto criado e desenvolvido por mim. Trabalho com edição de vídeo há 4 anos e com fotografia há 2, e hoje atuo com fotografia e produção audiovisual, aprendendo e evoluindo a cada trabalho.</p>
 <ul class="nm"><li><b>17</b><span>anos</span></li><li><b>2</b><span>anos de fotografia</span></li><li><b>4</b><span>anos de edição de vídeo</span></li></ul>
 <p class="bio">Comecei pela edição de vídeo e, mexendo nas imagens, fui querendo criar as minhas. A fotografia veio depois e as duas se completam: uma me ensinou a enxergar a luz, a outra a contar o que acontece depois dela. Cada casamento, prato ou evento é uma chance de fazer melhor que o anterior.</p></div></section>
+<section class="sec" id="faq"><h2>Perguntas frequentes</h2><div class="faq"><details><summary>Como funciona o orçamento?</summary><p>É sem compromisso. Você preenche o formulário ou chama no WhatsApp, e eu respondo com uma proposta de acordo com o tipo de trabalho, a data e o local.</p></details><details><summary>Qual é o prazo de entrega?</summary><p>Depende do tipo de trabalho e do volume de material. O prazo fica combinado na proposta, antes de fecharmos.</p></details><details><summary>Posso contratar só foto ou só vídeo?</summary><p>Pode. Os serviços podem ser contratados separadamente ou juntos, como fizer mais sentido para o seu projeto.</p></details><details><summary>Você atende em outras cidades?</summary><p>Me conte a cidade no orçamento. Dependendo da distância, o deslocamento pode entrar na proposta.</p></details><details><summary>Como é o pagamento?</summary><p>A forma de pagamento é combinada na proposta, antes do trabalho começar.</p></details><details><summary>Posso ver mais trabalhos?</summary><p>Claro. Chame no WhatsApp ou acompanhe o Instagram @gt.studios.fc.</p></details></div></section>
+<section class="sec" id="orcamento"><span class="eb">Orçamento</span><h2>Peça o seu</h2>
+<p class="qh">Conte o básico e eu respondo pelo WhatsApp. Sem compromisso.</p>
+<form id="qf" novalidate>
+<fieldset><legend>O que você precisa?</legend><div class="chips"><label><input type="radio" name="tipo" value="Casamento"><span>Casamento</span></label><label><input type="radio" name="tipo" value="Evento"><span>Evento</span></label><label><input type="radio" name="tipo" value="Gastronomia"><span>Gastronomia</span></label><label><input type="radio" name="tipo" value="Publicidade"><span>Publicidade</span></label><label><input type="radio" name="tipo" value="Vídeo"><span>Vídeo</span></label><label><input type="radio" name="tipo" value="Outro"><span>Outro</span></label></div></fieldset>
+<div class="rw">
+<label class="fld"><span>Seu nome</span><input name="nome" autocomplete="name" required></label>
+<label class="fld"><span>Cidade</span><input name="cidade" autocomplete="address-level2"></label>
+<label class="fld"><span>Data, se já tiver</span><input type="date" name="data"></label>
+</div>
+<label class="fld"><span>Conte um pouco mais (opcional)</span><textarea name="msg" rows="3"></textarea></label>
+<div class="ac"><button type="submit" class="bt">Enviar pelo WhatsApp <i>↗</i></button><a class="al" id="qmail" href="#orcamento" role="button">ou enviar por e-mail</a></div>
+<p class="er" id="qerr" role="alert"></p>
+</form></section>
 <section class="sec ct" id="contato"><h2>Vamos criar algo?</h2><ul></ul></section>
 <footer class="ft">© <span id="yr"></span> GT Studio</footer>
+<a class="wa" href="https://wa.me/5543984224038" target="_blank" rel="noopener" aria-label="Chamar no WhatsApp" title="Chamar no WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.7-5.4A8.5 8.5 0 1 1 21 11.5Z"/></svg></a>
 <canvas class="tr"></canvas><div class="cd"></div>
 <div id="lb" aria-hidden="true" role="dialog" aria-label="Visualizador"><button class="x">Fechar ✕</button><button class="pv" aria-label="Anterior">‹</button><div class="st"></div><button class="nx" aria-label="Próximo">›</button><div class="cp"></div></div>
 <script>
@@ -328,7 +388,7 @@ if(matchMedia('(hover:hover) and (pointer:fine)').matches&&!reduce){
   const kick=()=>{if(!run){run=1;requestAnimationFrame(draw);}};
   addEventListener('pointermove',e=>{if(fx2<-90){fx2=e.clientX;fy2=e.clientY;}mx=e.clientX;my=e.clientY;
     cd.style.transform=`translate3d(${mx}px,${my}px,0) scale(${hv?1.5:1})`;
-    const h=!!e.target.closest('a,button,.fr,.vc,.gi,[role=button]');if(h!==!!hv){hv=h;cd.style.transform=`translate3d(${mx}px,${my}px,0) scale(${hv?1.5:1})`;}
+    const h=!!e.target.closest('a,button,.fr,.vc,.gi,[role=button],input,textarea,label,summary');if(h!==!!hv){hv=h;cd.style.transform=`translate3d(${mx}px,${my}px,0) scale(${hv?1.5:1})`;}
     kick();},{passive:true});
   function draw(now){
     fx2+=(mx-fx2)*.22;fy2+=(my-fy2)*.22;
@@ -354,4 +414,27 @@ const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.targ
 document.querySelectorAll('.sec h2,.sv li,.ab p,.ct li,.vc,.gi,.fp,.ft2>*').forEach(el=>{el.classList.add('rv');el.style.setProperty('--d',el.matches('.vc,.ct li')?[...el.parentNode.children].indexOf(el)*.09:0);io.observe(el);});
 mark();build();hmeasure();hero();upd();document.fonts&&document.fonts.ready.then(()=>{hmeasure();hero();});
 })();
-</script></body></html>
+</script><script>
+(()=>{
+const WA="https://wa.me/5543984224038",MAIL="gabrimot83@gmail.com";
+const f=document.getElementById('qf'),err=document.getElementById('qerr'),wa=document.querySelector('.wa');
+if(wa){const on=()=>wa.classList.toggle('show',scrollY>innerHeight*1.3);addEventListener('scroll',on,{passive:true});on();}
+if(!f)return;
+const d=f.elements.data;if(d){const t=new Date();d.min=t.getFullYear()+'-'+String(t.getMonth()+1).padStart(2,'0')+'-'+String(t.getDate()).padStart(2,'0');}
+function msg(){
+  const v=n=>(f.elements[n].value||'').trim(),tipo=(f.querySelector('input[name=tipo]:checked')||{}).value;
+  if(!tipo){err.textContent='Escolha o que você precisa.';return null;}
+  if(!v('nome')){err.textContent='Digite seu nome.';f.elements.nome.focus();return null;}
+  err.textContent='';
+  let t='Olá Gabriel! Meu nome é '+v('nome')+'. Gostaria de um orçamento de '+tipo+'.';
+  if(v('data')){const p=v('data').split('-');if(p.length===3)t+=' Data: '+p[2]+'/'+p[1]+'/'+p[0]+'.';}
+  if(v('cidade'))t+=' Cidade: '+v('cidade')+'.';
+  if(v('msg'))t+=' Detalhes: '+v('msg');
+  return {t,tipo};
+}
+f.addEventListener('submit',e=>{e.preventDefault();const m=msg();if(m)window.open(WA+'?text='+encodeURIComponent(m.t),'_blank','noopener');});
+document.getElementById('qmail').addEventListener('click',e=>{e.preventDefault();const m=msg();if(m)location.href='mailto:'+MAIL+'?subject='+encodeURIComponent('Orçamento de '+m.tipo)+'&body='+encodeURIComponent(m.t);});
+f.addEventListener('input',()=>{err.textContent='';});
+})();
+</script>
+</body></html>
