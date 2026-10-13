@@ -54,10 +54,10 @@ a{color:inherit;text-decoration:none}
 .it.dv{place-items:center;padding:0}
 .dv h2{margin:0;text-align:center;font-weight:300;font-size:clamp(48px,12.5vw,210px);line-height:.95;letter-spacing:-.05em}
 .dv small{display:block;text-align:center;color:var(--mu);font-size:15px;margin-bottom:8px}
-.inf{position:absolute;left:var(--pad);bottom:calc(var(--pad) + 62px);z-index:3;max-width:min(60vw,520px);color:#fff;mix-blend-mode:difference;pointer-events:none;opacity:0}
-.inf small{display:block;font-size:14px;opacity:.7;margin-bottom:6px}
-.inf h3{margin:0;font-weight:300;font-size:clamp(26px,3.6vw,58px);line-height:1;letter-spacing:-.035em}
-.cnt{position:absolute;right:var(--pad);bottom:calc(var(--pad) + 62px);z-index:3;font-size:14px;color:#fff;mix-blend-mode:difference;font-variant-numeric:tabular-nums}
+.inf{position:absolute;left:var(--pad);bottom:calc(var(--pad) + 76px);z-index:3;max-width:min(60vw,520px);color:#fff;mix-blend-mode:difference;pointer-events:none;opacity:0}
+.inf small{display:none}
+.inf h3{margin:0;font-weight:300;font-size:clamp(20px,2.2vw,32px);line-height:1;letter-spacing:-.035em}
+.cnt{position:absolute;right:var(--pad);bottom:calc(var(--pad) + 76px);z-index:3;font-size:14px;color:#fff;mix-blend-mode:difference;font-variant-numeric:tabular-nums}
 .fb{position:fixed;left:50%;bottom:calc(var(--pad)*.6 + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);z-index:25;display:flex;gap:2px;padding:5px;border-radius:99px;background:rgba(24,24,24,.55);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);max-width:94vw;overflow-x:auto;scrollbar-width:none;opacity:0;pointer-events:none;transition:opacity .5s,transform .5s}
 .fb.show{opacity:1;transform:translate(-50%,0);pointer-events:auto}
 .fb button{all:unset;cursor:pointer;padding:8px 15px;border-radius:99px;font-size:13px;color:var(--mu);white-space:nowrap;transition:background .3s,color .3s}
@@ -220,16 +220,19 @@ html.cu .tr{display:block}
 </style><style id="ring">
 .ch{position:absolute;inset:0;opacity:0;visibility:hidden;pointer-events:none;overflow:hidden}
 .ch.on{pointer-events:auto}
-.ch .tt{position:absolute;inset:0;display:grid;place-items:center;z-index:0;pointer-events:none}
-.ch .tt h2{margin:0;text-align:center;font-weight:300;font-size:clamp(54px,15vw,260px);line-height:.95;letter-spacing:-.05em}
-.ch .tt small{display:block;text-align:center;color:var(--mu);font-size:15px;margin-bottom:8px}
+.inf,.cnt{mix-blend-mode:normal!important;color:var(--fg,#111)!important}
+.ch .tt{position:absolute;left:var(--pad);top:96px;z-index:3;pointer-events:none}
+.ch .tt h2{margin:0;font-weight:400;font-size:clamp(26px,3vw,44px);line-height:1;letter-spacing:-.035em}
+.ch .tt small{display:block;color:var(--mu);font-size:13px;letter-spacing:.04em;margin-bottom:10px}
+.pgb{position:absolute;left:var(--pad);right:var(--pad);bottom:calc(var(--pad) + 60px);height:1px;background:rgba(0,0,0,.12);z-index:3;pointer-events:none}
+.pgb i{display:block;height:100%;width:0;background:var(--fg,#111);transform-origin:left}
 .ring{position:absolute;inset:0;z-index:1;transform-style:preserve-3d;will-change:transform}
 .rc{position:absolute;left:50%;top:50%;-webkit-backface-visibility:hidden;backface-visibility:hidden;will-change:opacity}
 .rc .fr{width:100%;height:100%;aspect-ratio:auto;border-radius:3px;box-shadow:0 34px 60px -34px rgba(0,0,0,.5)}
 .pb{position:absolute;left:50%;top:50%;width:62px;height:62px;margin:-31px 0 0 -31px;border-radius:50%;background:rgba(0,0,0,.45);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
 .pb:after{content:'';position:absolute;left:25px;top:20px;border-left:18px solid #fff;border-top:11px solid transparent;border-bottom:11px solid transparent}
 .hn{position:absolute;left:50%;bottom:calc(var(--pad) + 74px);transform:translateX(-50%);z-index:3;font-size:13px;color:var(--mu);pointer-events:none;opacity:0;white-space:nowrap}
-@media(max-width:700px){.ch .tt h2{font-size:17vw}}
+@media(max-width:700px){.cnt{top:96px!important;bottom:auto!important}.ch .tt{top:82px}.ch .tt h2{font-size:26px}}
 </style>
 </head><body>
 <header class="hd"><b>GT STUDIO</b><nav><a href="#work">Trabalhos</a><a href="#galeria">Galeria</a><a href="#videos">Vídeos</a><a href="#servicos">Serviços</a><a href="#sobre">Sobre</a><a href="#orcamento">Orçamento</a></nav></header>
@@ -328,22 +331,22 @@ function chapters(f){
 function build(){
   const C=chapters(cur);best=-1;items=C;
   pin.innerHTML=C.map((c,j)=>{const n=c.L.length;
-    return `<div class="ch" data-c="${j}"><div class="tt"><div><small>0${NUM[c.key]} · ${n} ${c.key==='video'?(n>1?'vídeos':'vídeo'):(n>1?'fotos':'foto')}</small><h2>${NAME[c.key]}</h2></div></div><div class="ring">${c.L.map((m,i)=>`<div class="rc" data-c="${j}" data-k="${i}"><div class="fr" tabindex="0" role="button" aria-label="Ampliar: ${m.t}"><img alt="${m.t}" decoding="async">${m.vid?'<span class="pb"></span>':''}</div></div>`).join('')}</div><div class="hn">Role para girar ↻</div></div>`;}).join('')
+    return `<div class="ch" data-c="${j}"><div class="tt"><div><small>0${NUM[c.key]} · ${n} ${c.key==='video'?(n>1?'vídeos':'vídeo'):(n>1?'fotos':'foto')}</small><h2>${NAME[c.key]}</h2></div></div><div class="ring">${c.L.map((m,i)=>`<div class="rc" data-c="${j}" data-k="${i}"><div class="fr" tabindex="0" role="button" aria-label="Ampliar: ${m.t}"><img alt="${m.t}" decoding="async">${m.vid?'<span class="pb"></span>':''}</div></div>`).join('')}</div><div class="hn">Role para girar ↻</div><div class="pgb"><i></i></div></div>`;}).join('')
     +'<div class="inf"><small></small><h3></h3></div><div class="cnt"></div>';
   cnt=$('.cnt',pin);inf=$('.inf',pin);
-  C.forEach((c,j)=>{c.el=$(`.ch[data-c="${j}"]`,pin);c.ring=$('.ring',c.el);c.tt=$('.tt',c.el);c.hn=$('.hn',c.el);c.cards=[...c.el.querySelectorAll('.rc')];c.imgs=c.cards.map(r=>$('img',r));});
+  C.forEach((c,j)=>{c.el=$(`.ch[data-c="${j}"]`,pin);c.ring=$('.ring',c.el);c.tt=$('.tt',c.el);c.hn=$('.hn',c.el);c.pg=$('.pgb i',c.el);c.cards=[...c.el.querySelectorAll('.rc')];c.imgs=c.cards.map(r=>$('img',r));});
   layout();
 }
 function layout(){
   const W=innerWidth,H=innerHeight,mb=W<700;
-  const hc=mb?Math.min(H*.5,520):Math.min(H*.6,640);
+  const hc=mb?Math.min(H*.46,480):Math.min(H*.6,640);
   K={hc,persp:mb?1100:1500,rot:mb?.36:.42};
   let s=0;
   items.forEach(c=>{
     const n=c.L.length;c.n=n;c.step=Math.min(360/Math.max(n,1),40);
     const ws=c.L.map(m=>Math.min(hc*Math.max(.56,Math.min(m.ar,1.05)),W*.82));
     const avg=ws.reduce((a,b)=>a+b,0)/n;
-    c.R=n>1?Math.max(avg*(mb?.92:1.2)/(2*Math.tan(c.step*Math.PI/360)),avg*.9):avg*.9;
+    c.R=n>1?Math.max(avg*(mb?1.3:1.2)/(2*Math.tan(c.step*Math.PI/360)),avg*.9):avg*.9;
     c.cards.forEach((r,i)=>{const w=ws[i];r.style.width=w+'px';r.style.height=hc+'px';r.style.marginLeft=-w/2+'px';r.style.marginTop=-hc*.54+'px';
       r.style.transform=`rotateY(${i*c.step}deg) translateZ(${c.R}px)`;});
     c.el.style.perspective=K.persp+'px';
@@ -362,9 +365,9 @@ function upd(){
     c.el.style.visibility=a>0?'visible':'hidden';c.el.style.opacity=a;
     const u=c.rot>0?cl((t-c.in)/c.rot):0,base=u*(c.n-1)*c.step,ang=base+(reduce?0:-32*(1-e)+32*x),sc=.86+.14*e+.06*x;
     c.ring.style.transform=`scale3d(${sc},${sc},${sc}) translateZ(${-c.R}px) rotateY(${-ang}deg)`;
-    c.tt.style.transform=`scale(${.94+.08*e+.04*x})`;
+    c.tt.style.transform=`translateY(${(1-e)*14-x*10}px)`;c.pg.style.width=(u*100)+'%';
     c.hn.style.opacity=a*(1-sm(t,c.in,c.in+.3*H));
-    for(let i=0;i<c.n;i++){const d=((i*c.step-ang)%360+540)%360-180,ad=Math.abs(d),o=(1-.4*sm(ad,0,c.step*1.3))*(1-sm(ad,c.step*1.9,c.step*3.3)),r=c.cards[i];
+    for(let i=0;i<c.n;i++){const d=((i*c.step-ang)%360+540)%360-180,ad=Math.abs(d),o=(1-.3*sm(ad,0,c.step*1.3))*(1-sm(ad,c.step*1.9,c.step*3.3)),r=c.cards[i];
       r.style.opacity=o;r.style.visibility=o>.02?'visible':'hidden';r.style.pointerEvents=o>.3?'auto':'none';}
     if(a>bo){bo=a;b=j;bf=Math.round(u*(c.n-1));}
   });
@@ -372,7 +375,7 @@ function upd(){
   const k=b+':'+bf;
   if(k!==fk||b!==best){fk=k;best=b;
     const c=items[b];
-    if(c){const m=c.L[bf];inf.firstChild.textContent=NAME[m.cat==='pub'&&c.key==='video'?'video':m.cat];inf.lastChild.textContent=m.t;cnt.textContent=`${String(bf+1).padStart(2,'0')} / ${String(c.n).padStart(2,'0')}`;}
+    if(c){const m=c.L[bf];inf.firstChild.textContent='';inf.lastChild.textContent=m.t;cnt.textContent=`${String(bf+1).padStart(2,'0')} / ${String(c.n).padStart(2,'0')}`;}
     else{cnt.textContent='';}
   }
   inf.style.opacity=b<0?0:bo;cnt.style.opacity=b<0?0:bo;
